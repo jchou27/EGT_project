@@ -1,0 +1,13 @@
+# Claude
+.claude/
+CLAUDE.md
+
+# Course materials (kept locally, not version-controlled)
+EGT_Project.pdf
+Evolutionary Game Theory Proposal.pdf
+Lecture_Notes/
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
