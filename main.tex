@@ -68,14 +68,15 @@ Under calibrated competition intensity $\gamma = 3.0$, the model
 predicts that the strategist equilibrium is the unique stable ESS once
 $w > 2.60$. We test four predictions against a survey of $n = 42$
 Dartmouth undergraduates. All four hold in direction. Higher GPA
-importance correlates with higher layup ratios, career tracks differ
+importance is associated with higher layup ratios in sign (though not
+at conventional significance), career tracks differ
 significantly, GPA-protective course avoidance correlates with both
 higher $s$ and higher $w$, and perceived peer pressure correlates
 positively with $s$. Two findings cut against the model. Pre-medical
 students show the \emph{lowest} observed layup ratio despite the
-highest $w$, and the empirical population clusters at the balancer
-vertex rather than the strategist equilibrium predicted at
-$\bar{w} \approx 3.6$. We discuss explanations and show that
+highest $w$ (suggestive only; $n = 2$), and the empirical population
+clusters at the balancer vertex rather than the strategist equilibrium
+predicted at $\bar{w} = 3.57$. We discuss explanations and show that
 eliminating enforced grading medians is predicted to \emph{raise}, not
 lower, the equilibrium layup ratio.
 
@@ -122,8 +123,9 @@ dropout.
 This paper makes three contributions. First, we introduce a three-type
 replicator model in which each type's payoff depends on the mean layup
 intensity through a competition parameter $\gamma$. The model predicts
-a sharp bifurcation, with strategist dominance globally stable once $w$
-crosses a closed-form threshold. Second, we test four predictions
+a sharp bifurcation, with strategist dominance locally stable (and
+numerically the unique attractor in our simulations) once $w$ crosses
+a closed-form threshold. Second, we test four predictions
 against a survey of $n = 42$ Dartmouth undergraduates. All four hold
 in direction, but two large deviations appear. Third, we analyze a
 median-elimination counterfactual and show it raises, not lowers, the
@@ -217,8 +219,11 @@ be invaded by either purists or balancers.
 Table~\ref{tab:stability} reports the classification at
 $w \in \{1, 3, 5\}$. At $w = 1$ (low GPA importance), A- and
 C-vertices are unstable sources and B is a saddle, so no corner is
-stable. Trajectories instead converge to an interior point on the
-A--B edge whose mean equals the continuous-game ESS $s^\ast = 0.167$.
+stable. Trajectories instead settle on mixtures with mean
+approximately equal to the continuous-game ESS $s^\ast = 0.167$,
+lying on or near the A--B edge depending on the initial condition (at
+$\bar s = s^\ast$ all three types earn the baseline payoff, so the
+rest set is a line in $\Delta^2$ rather than an isolated point).
 At $w = 3$ and $w = 5$, the C-vertex is the unique stable ESS, with
 convergence faster at $w = 5$ (more negative eigenvalues).
 Figure~\ref{fig:simplex_panel} shows the corresponding phase portraits.
@@ -284,10 +289,11 @@ $w$ & Rest point & $\lambda_1$ & $\lambda_2$ & Type \\
 \label{sec:data}
 
 We administered a Google Form survey to $n = 42$ Dartmouth
-undergraduates [to be filled in: dates and recruitment channels]. The
+undergraduates during Spring term 2026, with the form distributed
+through classmates and peer networks. The
 sample skews toward Finance/consulting ($n = 24$, 57\%) and Economics
 majors ($n = 14$, 33\%). The mean GPA-importance rating is
-$\bar{w} \approx 3.6$ on a 1--5 scale. The distribution of $s$ is
+$\bar{w} = 3.57$ on a 1--5 scale. The distribution of $s$ is
 right-skewed, with most respondents between 0--40\% layups and a
 smaller tail above 50\%. Mean layup ratios range from
 $\bar{s} = 0.100$ (pre-medical) to $\bar{s} = 0.350$
@@ -316,11 +322,14 @@ with year and major indicator controls and HC1 standard errors
 \parencite{long2000using}. The estimate is $\hat\beta_w = +0.0103$
 (95\% CI $[-0.083, +0.103]$, $p = 0.83$). The sign matches the
 prediction, but the effect is statistically indistinguishable from
-zero given $n = 42$ and 16 fixed-effect indicators. Inverting
-$\bar s^\ast = (w - \varepsilon)/\gamma$ gives an implied
-$\hat\gamma = 1/\hat\beta_w \approx 97$, roughly 32 times the
-calibrated $\gamma = 3$, suggesting that the model substantially
-understates peer-level competition. Dropping the six double-major
+zero given $n = 42$ and 16 fixed-effect indicators. Treating the
+(statistically insignificant) point estimate as if it were identified,
+inverting $\bar s^\ast = (w - \varepsilon)/\gamma$ gives an implied
+$\hat\gamma = 1/\hat\beta_w \approx 97$. Because the 95\% CI for
+$\beta_w$ includes zero, this implied $\hat\gamma$ is unbounded above
+and is not a formal estimate; we report it only as a directional check
+that the calibrated $\gamma = 3$ likely understates peer-level
+competition. Dropping the six double-major
 respondents leaves the sign unchanged
 ($\hat\beta_w = +0.051$, $p = 0.47$).
 
@@ -333,8 +342,8 @@ ordering is not what the model predicts. Finance/consulting ranks
 highest ($\bar s = 0.350$), followed by Government/nonprofit (0.233),
 Tech/engineering (0.220), Undecided/other (0.183), Graduate/PhD
 (0.148), and Pre-medical (0.100). Pre-medical students, whom the
-model identifies as the most strategic (highest mean $w = 4.5$),
-exhibit the \emph{lowest} observed layup ratio. Only the
+model identifies as the most strategic (highest mean $w = 4.5$,
+$n = 2$), exhibit the \emph{lowest} observed layup ratio. Only the
 Finance/consulting coefficient is significant against the baseline
 ($\hat\beta = +0.167$, $p = 0.012$); see Figure~\ref{fig:p2}.
 
@@ -381,9 +390,8 @@ $p = 0.17$ for both).
 
 For P4, Q9 asked whether the Dartmouth environment pushes students
 toward easy courses on a $-2$ to $+2$ scale. The Spearman correlation
-between Q9 and $s$ is $\hat\rho = +0.231$ ($p = 0.14$, $n = 42$),
-which is a small-to-moderate positive association in the predicted
-direction. Figure~\ref{fig:p4} shows the scatter with horizontal
+between Q9 and $s$ is $\hat\rho = +0.231$ (two-sided $p = 0.14$,
+$n = 42$), a small positive association in the predicted direction. Figure~\ref{fig:p4} shows the scatter with horizontal
 jitter for legibility.
 
 \begin{figure}[H]
@@ -404,7 +412,7 @@ plot the result on $\Delta^2$ (Figure~\ref{fig:simplex_emp}). Every
 track clusters in the B-vertex region. Finance/consulting, the track
 with the highest mean $s$, still has only 17\% strategists and 75\%
 balancers; every other track has zero strategists. The model,
-calibrated at $\gamma = 3.0$ and evaluated at $\bar w \approx 3.6$,
+calibrated at $\gamma = 3.0$ and evaluated at $\bar w = 3.57$,
 predicts convergence to the C-vertex. The data show the opposite.
 This discrepancy is our most substantive empirical finding.
 
@@ -414,15 +422,22 @@ This discrepancy is our most substantive empirical finding.
   \caption{Empirical population state by career track on $\Delta^2$
     (type defined by layup ratio). Every track clusters near the
     B-vertex, contrary to the model's prediction of C-vertex
-    dominance at $\bar w \approx 3.6$.}
+    dominance at $\bar w = 3.57$.}
   \label{fig:simplex_emp}
 \end{figure}
 
 \subsection{Policy Counterfactual: Eliminating Enforced Grading Medians}
 
-Many Dartmouth departments enforce grading medians, which raise the
-competitive stakes of grade-seeking. Eliminating them can be modeled
-as a reduction in $\gamma$. We simulate $\gamma \to \gamma/2 = 1.5$.
+Many Dartmouth departments enforce grading medians, which fix the
+share of A-level grades and so make each student's payoff highly
+sensitive to peer enrollment, since one student's A displaces
+another's. Removing this cap loosens the coupling between individual
+payoff and aggregate behavior, which we model as a reduction in
+$\gamma$ from 3 to 1.5. The opposite reading, that medians blunt the
+upside of grade-seeking and their removal raises $\gamma$, is also
+defensible; we therefore treat the direction as a modeling assumption
+rather than a derivation, and report the counterfactual conditional on
+it.
 Under the replicator dynamics, the target layup ratio
 $\bar s^\ast = (w - \varepsilon)/\gamma$ doubles for any $w$
 (Table~\ref{tab:policy}). For $w \geq 3$, the baseline target already
@@ -457,14 +472,19 @@ $w$ & $\bar{s}^*$ ($\gamma = 3$) & $\bar{s}^*$ ($\gamma = 1.5$) & $\Delta \bar{s
 
 \paragraph{Survey and variables.}
 A Google Form survey was administered to Dartmouth undergraduates
-[dates and recruitment to be filled in]. Inclusion required current
-enrollment and at least one prior on-campus term. Respondents reported
-class year, primary major, intended career track, counts of total and
-layup courses over the three most recent on-campus terms, whether they
-had ever avoided a course to protect GPA, GPA importance on a 1--5
-scale, and perceived environmental pressure toward easy courses. The
-final sample was $n = 42$ after dropping rows missing layup or course
-counts. The layup ratio is $s_i = \text{layups}_i / \text{courses}_i \in [0, 1]$.
+during Spring term 2026, with the form link distributed through
+classmate and peer-network outreach. Inclusion required current
+enrollment and at least one prior on-campus term. The form defined a
+layup as a course taken primarily for its expected grade rather than
+its content, and respondents self-counted using that definition.
+Respondents reported class year, primary major, intended career track,
+counts of total and layup courses over the three most recent on-campus
+terms, whether they had ever avoided a course to protect GPA, GPA
+importance on a 1--5 scale, and perceived environmental pressure
+toward easy courses. The
+final sample is $n = 42$, with all respondents reporting complete
+layup and course-count fields (no rows were dropped). The layup ratio
+is $s_i = \text{layups}_i / \text{courses}_i \in [0, 1]$.
 GPA importance $w_i$ maps to $\{1, \dots, 5\}$. Course avoidance (Q7)
 maps to $\{0, 1, 2\}$, dichotomized at Q7 $\geq 1$ for P3. Perceived
 pressure $q9_i$ maps to $\{-2, \dots, +2\}$. Majors are normalized to
@@ -477,8 +497,11 @@ the empirical range of $s$ and demarcate minimal, moderate, and heavy
 layup-taking. The baseline value $\varepsilon = 0.5$ reflects the
 assumption that a non-layup course retains substantial value without
 competition. The competition intensity $\gamma = 3.0$ was calibrated
-so the interior condition $0 < w - \varepsilon < \gamma$ holds over
-$w \in (0.8, 2.6)$.
+so the continuous-game attractor $s^\ast = (w - \varepsilon)/\gamma$
+lies between the purist and strategist ratios,
+$s_A < s^\ast < s_C$, over $w \in (0.8, 2.6)$, keeping the replicator
+dynamics non-trivially interior across the lower half of the survey's
+$w$ range.
 
 \paragraph{Simulation and statistics.}
 \label{sec:sim}
@@ -489,9 +512,11 @@ re-normalized. Vertex stability was computed analytically using
 Eq.~\ref{eq:invasion}, which gives the two non-trivial tangent-space
 eigenvalues directly and avoids the spurious off-simplex eigenvalue
 of a naive 3D finite-difference Jacobian. P1 and P2 use OLS with HC1
-standard errors \parencite{long2000using}, since $s_i$ is bounded and
-ratio-valued. P3 uses a one-sided Mann--Whitney $U$ test, suited to
-small unequal groups \parencite{weibull1995evolutionary}. P4 uses
+standard errors \parencite{long2000using}. Although $s_i$ is bounded
+and ratio-valued, OLS is used for interpretability and ease of HC1
+inference; given the small sample, we do not pursue a fractional-logit
+specification. P3 uses a one-sided Mann--Whitney $U$ test, suited to
+small unequal groups. P4 uses
 Spearman's $\rho$ because $q9$ is ordinal. Analyses were run in
 Python 3.13.
 
@@ -504,8 +529,10 @@ Python 3.13.
 
 We introduced a three-type replicator model of course selection in
 which payoffs depend on the collective layup intensity through a
-competition parameter $\gamma$. The model predicts the strategist
-equilibrium is globally stable for $w \geq 3$ under our calibration.
+competition parameter $\gamma$. The strategist equilibrium is locally
+stable once $w > 2.60$ under our calibration, and numerical
+integration from a grid of interior initial conditions suggests it
+also attracts globally in this regime.
 Against 42 survey responses, all four directional predictions hold
 (P1--P4), although none reaches the 5\% significance level given the
 small sample. Two substantive anomalies stand out, the pre-medical
@@ -528,12 +555,13 @@ example, from online platforms or faculty grade distributions) would
 let future work model this directly.
 
 \textit{The B-vertex puzzle.}
-With mean $\bar w \approx 3.6$ above the threshold $w = 2.60$, the
+With mean $\bar w = 3.57$ above the threshold $w = 2.60$, the
 model predicts universal convergence to strategist dominance, yet the
 empirical population sits firmly in the balancer region. Three
 explanations are plausible. First, $\gamma$ may be far higher than 3.
-The OLS estimate $\hat\gamma \approx 97$, though imprecise, would push
-the interior fixed point to $w \approx 49$, generating interior
+The implied $\hat\gamma \approx 97$, though formally unidentified
+given the insignificant slope, would push the interior fixed point to
+$w \approx 49$, generating interior
 equilibria across the entire observable range and matching the
 B-vertex concentration. Second, the model may omit fitness costs of
 extreme strategist behavior, including reputation effects with
@@ -563,13 +591,13 @@ case of coupled environment--strategy dynamics
 model would couple the replicator equation to an environmental
 variable $n$ representing grading stringency,
 \begin{equation}
-  \dot{\bar s} = \varepsilon_s\, \bar s (1 - \bar s)\,\Delta f(n),
+  \dot{\bar s} = \tau_s\, \bar s (1 - \bar s)\,\Delta f(n),
   \qquad
-  \dot n = \varepsilon_n\bigl[g(n) - h(\bar s, n)\bigr],
+  \dot n = \tau_n\bigl[g(n) - h(\bar s, n)\bigr],
 \end{equation}
-where $\Delta f(n)$ is the payoff differential as a function of
-stringency and $g, h$ capture how collective layup-taking erodes
-grading discipline. Such systems can produce persistent oscillations
+where $\tau_s, \tau_n$ are time-scale parameters, $\Delta f(n)$ is the
+payoff differential as a function of stringency, and $g, h$ capture
+how collective layup-taking erodes grading discipline. Such systems can produce persistent oscillations
 between ``conservation'' and ``exploitation'' regimes that no
 decoupled replicator model can capture. The multi-decade decline in
 study time documented by \textcite{babcock2011falling} is
