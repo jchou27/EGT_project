@@ -65,20 +65,22 @@ replicator dynamics across three behavioral types, purists
 ($s_C = 0.70$). Each student's payoff depends on their own layup
 intensity, the population mean, and a GPA-importance parameter $w$.
 Under calibrated competition intensity $\gamma = 3.0$, the model
-predicts that the strategist equilibrium is the unique stable ESS once
-$w > 2.60$. We test four predictions against a survey of $n = 42$
-Dartmouth undergraduates. All four hold in direction. Higher GPA
-importance is associated with higher layup ratios in sign (though not
-at conventional significance), career tracks differ
-significantly, GPA-protective course avoidance correlates with both
-higher $s$ and higher $w$, and perceived peer pressure correlates
-positively with $s$. Two findings cut against the model. Pre-medical
-students show the \emph{lowest} observed layup ratio despite the
-highest $w$ (suggestive only; $n = 2$), and the empirical population
-clusters at the balancer vertex rather than the strategist equilibrium
-predicted at $\bar{w} = 3.57$. We discuss explanations and show that
-eliminating enforced grading medians is predicted to \emph{raise}, not
-lower, the equilibrium layup ratio.
+predicts that the strategist vertex is the unique strict ESS once
+$w > 2.60$. We test four predictions against a survey of
+$n = 42$ Dartmouth undergraduates. Three sign-tests hold in the
+predicted direction but fall short of conventional significance:
+higher GPA importance tracks with higher layup ratios; GPA-protective
+course avoidance correlates with both higher $s$ and higher $w$; and
+perceived peer pressure correlates positively with $s$. Career tracks
+differ significantly in mean layup ratio ($F = 3.13$, $p = 0.019$),
+but the predicted ordering does not hold. Two findings cut sharply
+against the model. Pre-medical students show the \emph{lowest}
+observed layup ratio despite the highest $w$ (suggestive only;
+$n = 2$), and the empirical population clusters at the balancer
+vertex rather than the strategist equilibrium predicted at
+$\bar{w} = 3.57$. We discuss explanations and show that eliminating
+enforced grading medians is predicted to \emph{raise}, not lower, the
+equilibrium layup ratio.
 
 % ============================================================
 \section{Introduction}
@@ -111,7 +113,7 @@ evolutionarily stable strategy or ESS \parencite{smith1973logic} is one
 that, once adopted by the population, cannot be invaded by any rare
 alternative.
 
-The economics of grade competition has empirical support.
+Grade competition is empirically well documented.
 \textcite{sabot1991grade} found that students migrate toward
 high-average-grade departments. \textcite{bok2006underachieving} argued
 that the resulting grade inflation is a collective-action failure.
@@ -126,8 +128,11 @@ intensity through a competition parameter $\gamma$. The model predicts
 a sharp bifurcation, with strategist dominance locally stable (and
 numerically the unique attractor in our simulations) once $w$ crosses
 a closed-form threshold. Second, we test four predictions
-against a survey of $n = 42$ Dartmouth undergraduates. All four hold
-in direction, but two large deviations appear. Third, we analyze a
+against a survey of $n = 42$ Dartmouth undergraduates. The sign-tests
+hold in the predicted direction but mostly fall short of conventional
+significance, and two large deviations appear (the pre-medical
+reversal and the population's concentration at the balancer vertex).
+Third, we analyze a
 median-elimination counterfactual and show it raises, not lowers, the
 equilibrium layup ratio for students with low-to-moderate GPA importance.
 
@@ -163,23 +168,28 @@ population follows the standard replicator equation
   \label{eq:replicator}
 \end{equation}
 
-\paragraph{Continuous-game ESS.}
+\paragraph{Continuous-game rest point.}
 \label{sec:cont-ess}
-Because $\pi_i$ is linear in $s_i$, the unique mixed-strategy ESS in an
-auxiliary continuous-strategy version of the game (where
-$s \in [0,1]$ is unconstrained) solves $w - \gamma \bar s - \varepsilon = 0$,
-giving
+Because $\pi_i$ is linear in $s_i$, the interior rest point of an
+auxiliary continuous-strategy game (where $s \in [0,1]$ is
+unconstrained) solves $w - \gamma \bar s - \varepsilon = 0$, giving
 \begin{equation}
   s^\ast = (w - \varepsilon) / \gamma,
   \label{eq:cont_ess}
 \end{equation}
-valid whenever $0 < w - \varepsilon < \gamma$. The three-type discrete
-game admits no analogous interior rest point ($\pi_A = \pi_B = \pi_C$
-would force $s_A = s_B = s_C$), so $s^\ast$ acts as an attractor of the
-mean $\bar s$. When $s^\ast \in (s_A, s_C)$, dynamics on $\Delta^2$ are
-pulled toward an edge mixture whose mean equals $s^\ast$. When
-$s^\ast > s_C$, the mean is clipped at $s_C$ and the dynamics drive the
-population to the C-vertex.
+valid whenever $0 < w - \varepsilon < \gamma$. At $\bar s = s^\ast$
+every strategy earns the baseline payoff $\varepsilon$, so $s^\ast$
+is a Nash equilibrium of the auxiliary game but only neutrally stable
+along the strategy axis. It is not a strict ESS in the
+Maynard-Smith sense, since linearity of $\pi_i$ in $s_i$ yields
+indifference rather than strict invasion inequality. The three-type
+discrete game admits no analogous interior rest point
+($\pi_A = \pi_B = \pi_C$ would force $s_A = s_B = s_C$), but $s^\ast$
+still acts as an attractor of the population mean $\bar s$. When
+$s^\ast \in (s_A, s_C)$, dynamics on $\Delta^2$ are pulled toward an
+edge mixture whose mean equals $s^\ast$. When $s^\ast > s_C$, the
+mean is clipped at $s_C$ and the dynamics drive the population to
+the C-vertex.
 
 \paragraph{Testable predictions.}
 From $\partial s^\ast / \partial w = 1/\gamma > 0$ the model yields:
@@ -220,13 +230,15 @@ Table~\ref{tab:stability} reports the classification at
 $w \in \{1, 3, 5\}$. At $w = 1$ (low GPA importance), A- and
 C-vertices are unstable sources and B is a saddle, so no corner is
 stable. Trajectories instead settle on mixtures with mean
-approximately equal to the continuous-game ESS $s^\ast = 0.167$,
+approximately equal to the continuous-game rest point
+$s^\ast = 0.167$,
 lying on or near the A--B edge depending on the initial condition (at
 $\bar s = s^\ast$ all three types earn the baseline payoff, so the
 rest set is a line in $\Delta^2$ rather than an isolated point).
 At $w = 3$ and $w = 5$, the C-vertex is the unique stable ESS, with
 convergence faster at $w = 5$ (more negative eigenvalues).
-Figure~\ref{fig:simplex_panel} shows the corresponding phase portraits.
+Figures~\ref{fig:simplex_w1}--\ref{fig:simplex_w5} show the
+corresponding phase portraits.
 
 \begin{table}[!htbp]
 \centering
@@ -258,31 +270,36 @@ $w$ & Rest point & $\lambda_1$ & $\lambda_2$ & Type \\
 
 \begin{figure}[H]
   \centering
-  \begin{subfigure}[t]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{simplex_w1.png}
-    \caption{$w = 1$. No corner is an ESS. Trajectories settle on the A--B edge.}
-    \label{fig:simplex_w1}
-  \end{subfigure}\hfill
-  \begin{subfigure}[t]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{simplex_w3.png}
-    \caption{$w = 3$. Threshold crossed. C-vertex is the unique stable ESS.}
-    \label{fig:simplex_w3}
-  \end{subfigure}\hfill
-  \begin{subfigure}[t]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{simplex_w5.png}
-    \caption{$w = 5$. C-vertex stability deepens, with faster convergence.}
-    \label{fig:simplex_w5}
-  \end{subfigure}
-  \caption{Phase portraits on $\Delta^2$ for the three regimes,
-    integrated by forward Euler ($\Delta t = 0.05$, $T = 200$) from a
-    grid of 30 interior starting points. Red stars mark trajectory
-    end-points and blue dots mark initial conditions. As $w$ crosses
-    the threshold $w = 2.60$, the unique attractor shifts from the
-    A--B edge to the C-vertex.}
-  \label{fig:simplex_panel}
+  \includegraphics[width=0.75\textwidth]{simplex_w1.png}
+  \caption{Phase portrait on $\Delta^2$ at $w = 1$ (below threshold).
+    A- and C-vertices are unstable sources and B is a saddle; no
+    corner is an ESS. Trajectories settle on or near the A--B edge,
+    consistent with the continuous-game rest point
+    $s^\ast = (w - \varepsilon)/\gamma = 0.167$. Integrated by forward
+    Euler ($\Delta t = 0.05$, $T = 200$) from a grid of 30 interior
+    starting points; blue dots mark initial conditions, red stars mark
+    trajectory end-points.}
+  \label{fig:simplex_w1}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{simplex_w3.png}
+  \caption{Phase portrait on $\Delta^2$ at $w = 3$ (above threshold
+    $w^\ast = 2.60$). The C-vertex is the unique stable strict ESS;
+    all 30 interior trajectories converge to it. Markers and
+    integration scheme as in Figure~\ref{fig:simplex_w1}.}
+  \label{fig:simplex_w3}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{simplex_w5.png}
+  \caption{Phase portrait on $\Delta^2$ at $w = 5$. The C-vertex
+    remains the unique stable strict ESS, with more negative invasion
+    eigenvalues and visibly faster convergence than at $w = 3$.
+    Markers and integration scheme as in Figure~\ref{fig:simplex_w1}.}
+  \label{fig:simplex_w5}
 \end{figure}
 
 \subsection{Survey Data}
@@ -322,7 +339,9 @@ with year and major indicator controls and HC1 standard errors
 \parencite{long2000using}. The estimate is $\hat\beta_w = +0.0103$
 (95\% CI $[-0.083, +0.103]$, $p = 0.83$). The sign matches the
 prediction, but the effect is statistically indistinguishable from
-zero given $n = 42$ and 16 fixed-effect indicators. Treating the
+zero, and with 16 fixed-effect indicators on $n = 42$ the
+specification is over-parameterized (adjusted $R^2 = -0.246$), so the
+slope is heavily attenuated. Treating the
 (statistically insignificant) point estimate as if it were identified,
 inverting $\bar s^\ast = (w - \varepsilon)/\gamma$ gives an implied
 $\hat\gamma = 1/\hat\beta_w \approx 97$. Because the 95\% CI for
@@ -351,7 +370,9 @@ Finance/consulting coefficient is significant against the baseline
 \centering
 \caption{Track-level statistics, sorted by mean layup ratio.
 $\hat\beta$ and $p$-value are OLS coefficients relative to
-Undecided/other, HC1 standard errors.}
+Undecided/other, HC1 standard errors. The Pre-medical SD ($n = 2$)
+is mechanically $|x_1 - x_2|/\sqrt{2}$ and carries no inferential
+content.}
 \label{tab:track}
 \small
 \begin{tabular}{lcccrc}
@@ -390,8 +411,9 @@ $p = 0.17$ for both).
 
 For P4, Q9 asked whether the Dartmouth environment pushes students
 toward easy courses on a $-2$ to $+2$ scale. The Spearman correlation
-between Q9 and $s$ is $\hat\rho = +0.231$ (two-sided $p = 0.14$,
-$n = 42$), a small positive association in the predicted direction. Figure~\ref{fig:p4} shows the scatter with horizontal
+between Q9 and $s$ is $\hat\rho = +0.231$ (one-sided $p = 0.07$;
+two-sided $p = 0.14$; $n = 42$), a small positive association in the
+predicted direction. Figure~\ref{fig:p4} shows the scatter with horizontal
 jitter for legibility.
 
 \begin{figure}[H]
@@ -406,9 +428,10 @@ jitter for legibility.
 \subsection{Empirical Simplex Overlay}
 
 We classify each respondent as type $A$ if $s < 0.20$, type $B$ if
-$0.20 \leq s < 0.50$, or type $C$ if $s \geq 0.50$, then compute the
-empirical type distribution $(x_A, x_B, x_C)$ within each track and
-plot the result on $\Delta^2$ (Figure~\ref{fig:simplex_emp}). Every
+$0.20 \leq s < 0.50$, or type $C$ if $s \geq 0.50$ (cutoffs are
+rounded midpoints between adjacent type values $s_A, s_B, s_C$), then
+compute the empirical type distribution $(x_A, x_B, x_C)$ within each
+track and plot the result on $\Delta^2$ (Figure~\ref{fig:simplex_emp}). Every
 track clusters in the B-vertex region. Finance/consulting, the track
 with the highest mean $s$, still has only 17\% strategists and 75\%
 balancers; every other track has zero strategists. The model,
@@ -517,7 +540,8 @@ and ratio-valued, OLS is used for interpretability and ease of HC1
 inference; given the small sample, we do not pursue a fractional-logit
 specification. P3 uses a one-sided Mann--Whitney $U$ test, suited to
 small unequal groups. P4 uses
-Spearman's $\rho$ because $q9$ is ordinal. Analyses were run in
+Spearman's $\rho$ (reported one-sided, given the directional
+prediction) because $q9$ is ordinal. Analyses were run in
 Python 3.13.
 
 % ============================================================
@@ -533,10 +557,12 @@ competition parameter $\gamma$. The strategist equilibrium is locally
 stable once $w > 2.60$ under our calibration, and numerical
 integration from a grid of interior initial conditions suggests it
 also attracts globally in this regime.
-Against 42 survey responses, all four directional predictions hold
-(P1--P4), although none reaches the 5\% significance level given the
-small sample. Two substantive anomalies stand out, the pre-medical
-reversal and the population's concentration at the B-vertex.
+Against 42 survey responses, three of the four directional predictions
+(P1, P3, P4) hold in sign but fall short of conventional significance;
+P2's cross-track $F$-test rejects homogeneity ($p = 0.019$), but the
+predicted ordering does not hold. Two substantive anomalies stand out,
+the pre-medical reversal and the population's concentration at the
+B-vertex.
 
 \subsection{Empirical Anomalies}
 
@@ -558,16 +584,25 @@ let future work model this directly.
 With mean $\bar w = 3.57$ above the threshold $w = 2.60$, the
 model predicts universal convergence to strategist dominance, yet the
 empirical population sits firmly in the balancer region. Three
-explanations are plausible. First, $\gamma$ may be far higher than 3.
-The implied $\hat\gamma \approx 97$, though formally unidentified
-given the insignificant slope, would push the interior fixed point to
-$w \approx 49$, generating interior
-equilibria across the entire observable range and matching the
-B-vertex concentration. Second, the model may omit fitness costs of
-extreme strategist behavior, including reputation effects with
-faculty, advising constraints, and intrinsic preferences for learning.
-Third, the sample over-represents Economics and Finance/consulting
-students, whose disciplinary norms may suppress extreme layup-taking.
+explanations are plausible, and they likely operate together. First,
+$\gamma$ may be substantially higher than the calibrated 3. The small
+observed slope $\hat\beta_w \approx 0.01$ is mechanically consistent
+with very large $\gamma$ (the inverted point estimate
+$1/\hat\beta_w \approx 97$ is formally unidentified given the
+insignificant slope), and any $\gamma$ above roughly 9 pushes the
+C-vertex stability threshold $w^\ast = \gamma s_C + \varepsilon$ above
+the observable $w$ range, removing the strict prediction of strategist
+dominance. High $\gamma$ on its own would, however, drive the dynamics
+toward the A-vertex rather than the B-vertex, since
+$s^\ast = (w - \varepsilon)/\gamma$ falls below $s_A$ for large
+$\gamma$; the level concentration at B must therefore come from
+something beyond the calibrated competition channel. Second, the
+model omits fitness costs of extreme strategist behavior, including
+reputation effects with faculty, advising constraints, and intrinsic
+preferences for learning. These costs penalize the C-corner and could
+stabilize an interior region around B. Third, the sample
+over-represents Economics and Finance/consulting students, whose
+disciplinary norms may suppress extreme layup-taking.
 
 \subsection{Policy Implications and Coupled Dynamics}
 
@@ -607,14 +642,17 @@ $\gamma$ directly, which makes the decoupled counterfactual a
 conservative guide.
 
 \paragraph{Limitations and future directions.}
-The sample ($n = 42$) is small, single-institution, and skewed toward
-Finance/consulting and Economics. All key variables are self-reported,
-and the parameters $\gamma$ and $\varepsilon$ are calibrated rather
-than estimated. Future work should pursue transcript-level data
-(enabling structural estimation of $\gamma$), multi-institution
-comparisons (Princeton's 2004 grade-deflation policy offers exogenous
-variation in $\gamma$), and a richer strategy space with course
-difficulty as a continuous dimension and heterogeneous $w$.
+The sample ($n = 42$) is a single-institution convenience sample
+drawn through the authors' peer networks, with no random selection
+and all key variables self-reported; the resulting skew toward
+Finance/consulting and Economics is the most visible expression of
+this design limitation. The parameters $\gamma$ and $\varepsilon$ are
+calibrated rather than estimated. Future work should pursue
+transcript-level data (enabling structural estimation of $\gamma$),
+multi-institution comparisons (Princeton's 2004 grade-deflation
+policy offers exogenous variation in $\gamma$), and a richer strategy
+space with course difficulty as a continuous dimension and
+heterogeneous $w$.
 
 % ============================================================
 \printbibliography[title={References}]
