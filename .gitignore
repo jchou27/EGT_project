@@ -12,3 +12,8 @@ Supplemental_Notes/
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
+
+# Paper sources (kept locally, not version-controlled)
+main.tex
+refs.bib
+slides/
