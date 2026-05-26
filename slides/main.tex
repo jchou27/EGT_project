@@ -1,0 +1,378 @@
+% =====================================================================
+%  Layup Equilibria — 15-minute presentation
+%  Compile: pdflatex -interaction=nonstopmode main.tex
+%  All slide text is verbatim or near-verbatim from ../main.tex.
+% =====================================================================
+\documentclass[xcolor=dvipsnames,11pt,table,aspectratio=169]{beamer}
+
+\definecolor{DartmouthGreen}{RGB}{0,105,62}
+\setbeamercolor{structure}{fg=DartmouthGreen}
+\setbeamercolor{title}{fg=DartmouthGreen}
+\setbeamercolor{frametitle}{fg=DartmouthGreen}
+\setbeamertemplate{navigation symbols}{}
+
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb, bm}
+\usepackage{array}
+\graphicspath{{./Figures/}}
+
+\begin{document}
+
+% --- Slide 1: Title ---------------------------------------------------
+\begin{frame}
+\begin{center}
+\vspace{0.2cm}
+{\Large \textbf{Layup Equilibria}}\\[4pt]
+{\large \textbf{An Evolutionary Game-Theoretic Model of\\
+Strategic Course Selection at Dartmouth}}\\[14pt]
+\small Jack Chou \quad Alejandro Araujo \quad Nicholas Booth \quad Godwin Kangor\\[10pt]
+\footnotesize\textcolor{DartmouthGreen}{\textbf{MATH/QSS 30.04: Evolutionary Game Theory}}\\[1pt]
+\footnotesize Dartmouth College, May 2026
+\end{center}
+\end{frame}
+
+% --- Slide 2: Motivation ----------------------------------------------
+\begin{frame}
+\frametitle{What is a layup?}
+\small
+\begin{itemize}
+\item At Dartmouth, a ``layup'' is a course taken mainly for its
+      high expected grade rather than its content.
+\item Academic performance is benchmarked against peers through graded
+      distributions, class rankings, and competitive post-graduate
+      admissions, so each student's best portfolio depends on what
+      classmates are doing.
+\item A student who picks a rigorous course while peers enroll in easy
+      ones takes a double hit: harder material and a harsher relative
+      curve.
+\item \textbf{What looks like a private study decision is in fact
+      strategic.}
+\end{itemize}
+\end{frame}
+
+% --- Slide 4: The three-type replicator model (condensed) ------------
+\begin{frame}
+\frametitle{The three-type replicator model}
+\small
+Partition the student population into three behavioral types:
+\begin{itemize}
+\itemsep1pt
+\item \emph{Purists} (type $A$): few layups, $s_A = 0.10$
+\item \emph{Balancers} (type $B$): moderate, $s_B = 0.35$
+\item \emph{Strategists} (type $C$): maximize GPA-padding, $s_C = 0.70$
+\end{itemize}
+\vskip 4pt
+\textbf{Payoffs.} Taking layups pays off when you out-pad the crowd, but
+each layup's value erodes as more peers pile in. The strength of that
+crowding is the competition intensity $\gamma$, weighed against how much
+GPA matters ($w$). The population then evolves by replicator dynamics:
+types earning above the average grow, those below shrink.
+\vskip 6pt
+\textbf{Key result.} Once GPA matters enough --- past a threshold of
+about 2.6 on the 1--5 scale --- strategists become unbeatable. No mix of
+purists or balancers can displace them.
+\end{frame}
+
+% --- Slide 6: Phase portraits -----------------------------------------
+\begin{frame}
+\frametitle{Phase portraits at $w \in \{1, 3, 5\}$}
+\begin{center}
+\includegraphics[width=0.31\textwidth]{simplex_w1.png}\hfill
+\includegraphics[width=0.31\textwidth]{simplex_w3.png}\hfill
+\includegraphics[width=0.31\textwidth]{simplex_w5.png}
+\end{center}
+\vskip 4pt
+\scriptsize{
+When GPA matters little ($w = 1$) no corner wins and the population
+settles between the purist and balancer corners. When it matters more
+($w = 3, 5$) everything flows to the strategist corner. As GPA pressure
+rises, the population swings from the purist corner toward the
+strategist corner.
+}
+\end{frame}
+
+% --- Slide 7: Four testable predictions -------------------------------
+\begin{frame}
+\frametitle{Four testable predictions}
+\small
+The model says more GPA pressure should mean more layups. That gives
+four things we can check in the survey:
+\begin{itemize}
+\itemsep3pt
+\item[\textbf{P1}] Students who care more about GPA take more layups.
+\item[\textbf{P2}] Career tracks line up by how much they care about GPA
+      (pre-medical $>$ finance/consulting $>$ tech $>$ undecided).
+\item[\textbf{P3}] Students who dropped or avoided a course to protect
+      their GPA take more layups and care more about GPA.
+\item[\textbf{P4}] Students who feel more peer pressure toward easy
+      courses take more layups themselves.
+\end{itemize}
+\end{frame}
+
+% --- Slide 8: Survey and sample ---------------------------------------
+\begin{frame}
+\frametitle{Survey \& sample}
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.42\textwidth}
+\footnotesize
+\begin{itemize}
+\itemsep2pt
+\item Google Form survey, Spring 2026, $n = 51$ Dartmouth
+      undergraduates, distributed through peer networks.
+\item Sample skews toward Finance/consulting ($n = 25$, 49\%) and
+      Economics majors ($n = 14$, 27\%).
+\item Average GPA-importance rating is 3.6 on a 1--5 scale.
+\item Most students take layups in 0--40\% of their courses, with a
+      smaller tail above 50\%.
+\item Average layup share by track ranges from 15\% (graduate/PhD)
+      to 35\% (finance/consulting).
+\end{itemize}
+\end{column}
+\begin{column}{0.56\textwidth}
+\begin{center}
+\includegraphics[width=\linewidth,keepaspectratio]{desc_overview.png}
+\end{center}
+\end{column}
+\end{columns}
+\end{frame}
+
+% --- Slide 9: P1 + P2 results -----------------------------------------
+\begin{frame}
+\frametitle{P1 \& P2: GPA importance and career track}
+\begin{columns}[T]
+\begin{column}{0.5\textwidth}
+\small
+\textbf{P1 --- does caring about GPA mean more layups?}
+\begin{itemize}
+\itemsep2pt
+\item Yes, in the predicted direction --- but the effect is tiny and
+      not statistically reliable.
+\item Caring more about GPA barely changes how many layups a student takes.
+\end{itemize}
+\vskip 6pt
+\textbf{P2 --- do career tracks line up as the model predicts?}
+\begin{itemize}
+\itemsep2pt
+\item No. Tracks differ only weakly, and not in the predicted order.
+\item Finance/consulting takes the most layups (35\% of courses), while
+      the supposedly ``most strategic'' tracks (pre-medical, graduate/PhD)
+      sit near the bottom.
+\end{itemize}
+\end{column}
+\begin{column}{0.5\textwidth}
+\begin{center}
+\includegraphics[height=4.8cm]{p2_box_s_by_track.png}
+\end{center}
+\end{column}
+\end{columns}
+\end{frame}
+
+% --- Slide 10: P3 + P4 results ----------------------------------------
+\begin{frame}
+\frametitle{P3 \& P4: avoidance and peer pressure}
+\begin{columns}[T]
+\begin{column}{0.5\textwidth}
+\small
+\textbf{P3 --- do GPA-protective course-droppers take more layups?}
+\begin{itemize}
+\itemsep2pt
+\item Students who have dropped or avoided a course to protect their GPA
+      ($n = 25$) take somewhat more layups, and care more about GPA, than
+      those who never have ($n = 26$).
+\item Both gaps point the predicted way but stay weak --- the layup gap
+      is borderline, the GPA-importance gap is not significant.
+\end{itemize}
+\vskip 6pt
+\textbf{P4 --- does feeling peer pressure mean more layups?}
+\begin{itemize}
+\itemsep2pt
+\item A weak positive link: students who feel the environment pushes
+      toward easy courses take slightly more layups.
+\item Not strong enough to be statistically conclusive.
+\end{itemize}
+\end{column}
+\begin{column}{0.5\textwidth}
+\begin{center}
+\includegraphics[height=4.6cm]{p4_scatter_q9_s.png}\\[2pt]
+\scriptsize{Each dot is a student: perceived pressure toward easy courses
+(left to right) vs.\ their layup share (up).}
+\end{center}
+\end{column}
+\end{columns}
+\end{frame}
+
+% --- Slide 10b: Predictions scorecard ---------------------------------
+\begin{frame}
+\frametitle{Scorecard: how the four predictions fared}
+\small
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{p{5.0cm}p{4.4cm}l}
+\toprule
+Prediction & What we found & Holds? \\
+\midrule
+P1: more GPA focus $\to$ more layups & right direction, tiny effect & weakly \\
+P2: tracks ordered by GPA focus & wrong order, weak differences & no \\
+P3: GPA-droppers take more layups (and care more about GPA) & right direction, borderline & partly \\
+P4: peer pressure $\to$ more layups & right direction, weak & weakly \\
+\bottomrule
+\end{tabular}
+\end{center}
+\vskip 6pt
+\begin{itemize}
+\itemsep2pt
+\item All four point the predicted way, but none is strong enough to be
+      statistically convincing.
+\item The biggest miss: most students cluster among the balancers, not
+      the strategists the model predicts.
+\end{itemize}
+\end{frame}
+
+% --- Slide 11: Empirical simplex anomaly ------------------------------
+\begin{frame}
+\frametitle{Empirical simplex: the central anomaly}
+\begin{columns}[T]
+\begin{column}{0.45\textwidth}
+\scriptsize
+Each dot is a career track, placed by its mix of the three types. The
+three corners are all-purist, all-balancer, and all-strategist.
+\begin{itemize}
+\itemsep2pt
+\item No track lands in the strategist corner.
+\item Only Finance/consulting, Tech/engineering, and Undecided/other have
+      any strategists at all (16\%, 22\%, 14\%). Finance/consulting is
+      mostly balancers (76\%).
+\item The other tracks sit between the purist and balancer corners.
+\item \textbf{The model says everyone should pile into the strategist
+      corner. The data show the opposite ---} every track sits in the
+      balancer region instead.
+\end{itemize}
+\end{column}
+\begin{column}{0.55\textwidth}
+\begin{center}
+\includegraphics[height=4.8cm]{empirical_simplex.png}
+\end{center}
+\end{column}
+\end{columns}
+\end{frame}
+
+% --- Slide 12: Discussion: two anomalies ------------------------------
+\begin{frame}
+\frametitle{Discussion: two anomalies}
+\small
+\textbf{The pre-medical reversal.} Pre-meds care about GPA the most
+(4.3 out of 5) yet take among the fewest layups (about 17\% of courses,
+and only 3 respondents, so read with caution). A likely explanation:
+they protect their GPA a different way --- avoiding hard courses
+altogether rather than loading up on easy ones. The right lens for them
+may be course difficulty, not layup count.\\[6pt]
+\textbf{The balancer puzzle.} Most students care about GPA enough that
+the model says strategists should take over --- yet the population sits
+firmly among the balancers. Three explanations, likely working together:
+\begin{itemize}
+\itemsep2pt
+\item Competition may be far fiercer than our calibration assumes.
+\item The model ignores the costs of being an extreme strategist
+      (reputation with faculty, advising limits, wanting to actually learn).
+\item Our sample over-represents Economics and Finance, whose norms may
+      hold back extreme layup-taking.
+\end{itemize}
+\end{frame}
+
+% --- Slide 13: Policy counterfactual ----------------------------------
+\begin{frame}
+\frametitle{Policy counterfactual: eliminating enforced medians}
+\begin{columns}[T]
+\begin{column}{0.55\textwidth}
+\small
+\begin{itemize}
+\itemsep3pt
+\item Removing enforced grading medians weakens the link between your
+      grade and what classmates do --- in the model, it halves the
+      competitive pressure.
+\item The layup share the model pushes toward then \emph{doubles} at
+      every level of GPA focus (up to a 100\% cap).
+\item \textbf{The implication is troubling.} Removing medians pushes the
+      layup share \emph{up}, especially for the low-to-moderate GPA-focus
+      students reformers most hope to steer toward harder courses.
+\end{itemize}
+\end{column}
+\begin{column}{0.45\textwidth}
+\centering
+\footnotesize
+\begin{tabular}{cccc}
+\toprule
+GPA focus & Target now & Medians removed & Change \\
+\midrule
+1 & 17\% & 33\%  & $+17$ \\
+2 & 50\% & 100\% & $+50$ \\
+3 & 83\% & 100\% & $+17$ \\
+4 & 100\% & 100\% & $0$ \\
+5 & 100\% & 100\% & $0$ \\
+\bottomrule
+\end{tabular}\\[4pt]
+\scriptsize Competitive pressure halved, target capped at 100\%.
+\end{column}
+\end{columns}
+\end{frame}
+
+% --- Slide 14: Limitations & future directions ------------------------
+\begin{frame}
+\frametitle{Limitations \& future directions}
+\scriptsize
+\textbf{Limitations:}
+\begin{itemize}
+\itemsep1pt
+\item The sample ($n = 51$) is a single-institution convenience sample
+      drawn through the authors' peer networks, with no random
+      selection and all key variables self-reported.
+\item The resulting skew toward Finance/consulting and Economics is
+      the most visible expression of this design limitation.
+\item The model's competition and baseline-value parameters are set by
+      hand, not estimated from data.
+\end{itemize}
+\vskip 4pt
+\textbf{Future work should pursue:}
+\begin{itemize}
+\itemsep1pt
+\item Transcript-level data, so the competition parameter can be
+      estimated rather than assumed.
+\item Multi-institution comparisons --- Princeton's 2004 grade-deflation
+      policy offers a natural experiment.
+\item A richer model that adds course difficulty, not just layup count.
+\end{itemize}
+\end{frame}
+
+% --- Slide 15: Three contributions / takeaway -------------------------
+\begin{frame}
+\frametitle{Takeaways}
+\small
+\begin{enumerate}
+\itemsep4pt
+\item \textbf{A three-type model} (purists, balancers, strategists)
+      where layups pay off until everyone piles in. It predicts a sharp
+      tipping point: once GPA matters enough, strategists take over.
+\item \textbf{Four predictions tested} against $n = 51$ Dartmouth
+      undergraduates. All four lean the predicted way but mostly fall
+      short of statistical significance. Two big surprises stand out ---
+      the pre-medical reversal and the population clustering among the
+      balancers, not the strategists.
+\item \textbf{A median-elimination counterfactual} that raises ---
+      not lowers --- the equilibrium layup ratio for students with
+      low-to-moderate GPA importance.
+\end{enumerate}
+\end{frame}
+
+% --- Slide 16: Acknowledgements (placeholder) -------------------------
+\begin{frame}
+\begin{center}
+\vskip 1cm
+{\Large \textbf{\textcolor{DartmouthGreen}{Thank you.}}}\\[14pt]
+\normalsize Questions?\\[18pt]
+\textcolor{red}{\textbf{[PLACEHOLDER: acknowledgements / advisor / data
+provenance note — fill in before delivery]}}
+\end{center}
+\end{frame}
+
+\end{document}
