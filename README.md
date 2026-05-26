@@ -51,40 +51,6 @@ jupyter notebook
 
 Then open the three notebooks and run them in order. Outputs land in `data/` and `figures/`.
 
-## Building the paper
-
-Easiest path: upload `main.tex`, `refs.bib`, and the `figures/` folder to Overleaf, set the compiler to pdfLaTeX with Biber, and recompile.
-
-Locally:
-
-```bash
-pdflatex main.tex
-biber main
-pdflatex main.tex
-pdflatex main.tex
-```
-
-## Headline result
-
-Under calibrated γ = 3.0, the strategist vertex (s_C = 0.70) is the unique strict ESS once w > 2.60. The empirical n = 51 sample clusters at the balancer vertex instead. Three of four sign-tests match the predicted direction but are not statistically significant at α = 0.05.
-
-## Authors
-
-Jack Chou, Alejandro Araujo, Nicholas Booth, Godwin Kangor. MATH/QSS 30.04, Dartmouth College, May 2026.
-
-Contact: Jack Chou.
-
-## Citation
-
-```bibtex
-@unpublished{chou2026layup,
-  title  = {Layup Equilibria: An Evolutionary Game-Theoretic Model of Strategic Course Selection at Dartmouth},
-  author = {Chou, Jack and Araujo, Alejandro and Booth, Nicholas and Kangor, Godwin},
-  note   = {Final paper, MATH/QSS 30.04 Evolutionary Game Theory, Dartmouth College},
-  year   = {2026}
-}
-```
-
 ## License
 
 MIT. See [`LICENSE`](LICENSE).
